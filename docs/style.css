@@ -1,0 +1,142 @@
+/* ========== Base / Reset ========== */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #fafafa;
+
+  /* Flex layout to push footer to bottom on short pages */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== Helpers ========== */
+.container {
+  width: min(100% - 2rem, 900px);
+  margin-inline: auto;
+}
+
+/* ========== Header ========== */
+.site-header {
+  background: #0a66c2; /* calm blue */
+  color: #fff;
+}
+.site-header .brand {
+  padding: 1.25rem 0 0.5rem;
+}
+.site-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.subtitle {
+  margin: 0.25rem 0 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+/* Navigation */
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 1rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.site-nav a {
+  color: #eaf3ff;
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+}
+.site-nav a[aria-current="page"],
+.site-nav a:hover,
+.site-nav a:focus {
+  background: rgba(255,255,255,0.18);
+}
+
+/* ========== Main Content ========== */
+main {
+  flex: 1;             /* pushes footer down if short */
+  padding: 1.25rem 0 2rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+}
+h2 {
+  margin-top: 0.25rem;
+}
+
+/* Links */
+a {
+  color: #0a66c2;
+}
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+}
+
+.card img {
+  max-width: 500px;   /* limit image width */
+  margin-left: auto;  /* center horizontally */
+  margin-right: auto;
+}
+
+figure {
+  text-align: center;
+  margin: 0;
+}
+figcaption {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* ========== Footer ========== */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid #e6e6e6;
+  padding: 1rem 0;
+}
+.site-footer p {
+  margin: 0.25rem 0;
+}
+
+/* ========== Responsive Tweaks ========== */
+@media (min-width: 720px) {
+  .site-header .brand {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .subtitle {
+    text-align: right;
+  }
+}
