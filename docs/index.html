@@ -1,59 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="COP4813 project site for Daytona State College." />
-  <title>Daniel Kuehn – COP4813 Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container">
-      <div class="brand">
-        <h1>Daniel Kuehn</h1>
-        <p class="subtitle">COP4813 – Web Systems I · Daytona State College</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="COP4813 project site for Daytona State College."
+    />
+    <title>Daniel Kuehn – COP4813 Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="brand">
+          <h1>Daniel Kuehn</h1>
+          <p class="subtitle">
+            COP4813 – Web Systems I · Daytona State College
+          </p>
+        </div>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <ul role="menubar">
+            <li><a aria-current="page" href="index.html">Home</a></li>
+            <li class="has-submenu">
+              <a
+                href="./assignments/"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >My Assignments</a
+              >
+              <ul class="submenu" role="menu" aria-label="Assignments">
+                <li role="none">
+                  <a role="menuitem" href="./assignments/assignment-1/"
+                    >Assignment 1</a
+                  >
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="./assignments/assignment-2/"
+                    >Assignment 2</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
       </div>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <ul role="menubar">
-          <li><a aria-current="page" href="index.html">Home</a></li>
-          <li class="has-submenu">
-            <a href="./assignments/" aria-haspopup="true" aria-expanded="false">My Assignments</a>
-            <ul class="submenu" role="menu" aria-label="Assignments">
-              <li role="none"><a role="menuitem" href="./assignments/assignment-1/">Assignment 1</a></li>
-              <li role="none"><a role="menuitem" href="./assignments/assignment-2/">Assignment 2</a></li>
-            </ul>
+    </header>
+
+    <main id="main" class="container">
+      <section class="card">
+        <h2>Welcome</h2>
+        <p>
+          This website is for <strong>COP4813 - Web Systems 1</strong> at
+          <strong>Daytona State College</strong>. It showcases assignment work
+          and a progressively improved front-end as the semester moves along.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Assignments</h2>
+        <ul>
+          <li>
+            <a href="./assignments/assignment-1/">Assignment 1 – Hello World</a>
+            — a simple page to confirm the structure and hosting environment
+            were working correctly.
           </li>
-          <li><a href="about.html">About</a></li>
+          <li>
+            <a href="./assignments/assignment-2/"
+              >Assignment 2 – Website Creation</a
+            >
+            — the main site structure, navigation, and layout you’re viewing
+            now.
+          </li>
         </ul>
-      </nav>
-    </div>
-  </header>
+      </section>
 
-  <main id="main" class="container">
-    <section class="card">
-      <h2>Welcome</h2>
-      <p>This website is for <strong>COP4813 - Web Systems 1</strong> at <strong>Daytona State College</strong>. It showcases assignment work and a progressively improved front-end as the semester moves along.</p>
-    </section>
+      <section class="card">
+        <h2>Useful Links</h2>
+        <p>
+          Visit
+          <a href="https://daytonastate.edu" target="_blank" rel="noopener"
+            >Daytona State College</a
+          >
+          for program details, or browse the code on
+          <a
+            href="https://github.com/danny-kuehn/COP4813"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >.
+        </p>
+      </section>
+    </main>
 
-    <section class="card">
-      <h2>Assignments</h2>
-      <ul>
-        <li><a href="./assignments/assignment-1/">Assignment 1 – Hello World</a> — a simple page to confirm the structure and hosting environment were working correctly.</li>
-        <li><a href="./assignments/assignment-2/">Assignment 2 – Website Creation</a> — the main site structure, navigation, and layout you’re viewing now.</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Useful Links</h2>
-      <p>Visit <a href="https://daytonastate.edu" target="_blank" rel="noopener">Daytona State College</a> for program details, or browse the code on <a href="https://github.com/danny-kuehn/COP4813" target="_blank" rel="noopener">GitHub</a>.</p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Daniel Kuehn · BSIT Student · Daytona State College</p>
-    </div>
-  </footer>
-</body>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 Daniel Kuehn · BSIT Student · Daytona State College</p>
+      </div>
+    </footer>
+  </body>
 </html>
