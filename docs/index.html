@@ -15,8 +15,15 @@
         <p class="subtitle">COP4813 – Web Systems I · Daytona State College</p>
       </div>
       <nav class="site-nav" aria-label="Primary navigation">
-        <ul>
+        <ul role="menubar">
           <li><a aria-current="page" href="index.html">Home</a></li>
+          <li class="has-submenu">
+            <a href="./assignments/" aria-haspopup="true" aria-expanded="false">My Assignments</a>
+            <ul class="submenu" role="menu" aria-label="Assignments">
+              <li role="none"><a role="menuitem" href="./assignments/assignment-1/">Assignment 1</a></li>
+              <li role="none"><a role="menuitem" href="./assignments/assignment-2/">Assignment 2</a></li>
+            </ul>
+          </li>
           <li><a href="about.html">About</a></li>
         </ul>
       </nav>
@@ -25,26 +32,21 @@
 
   <main id="main" class="container">
     <section class="card">
-      <h2>About This Page</h2>
-      <p>This website was created as part of the COP4813 Web Systems I course at Daytona State College. It demonstrates HTML5, CSS, JavaScript, and basic web development concepts.</p>
+      <h2>Welcome</h2>
+      <p>This website is for <strong>COP4813 - Web Systems 1</strong> at <strong>Daytona State College</strong>. It showcases assignment work and a progressively improved front-end as the semester moves along.</p>
     </section>
 
     <section class="card">
-      <h2>My Cat</h2>
-      <figure>
-        <img src="images/jeff.png" alt="A photo of Jeff, my orange cat, sitting in the backyard." />
-        <figcaption>This is Jeff. He’s orange—need I say more?</figcaption>
-      </figure>
+      <h2>Assignments</h2>
+      <ul>
+        <li><a href="./assignments/assignment-1/">Assignment 1 – Hello World</a> — a simple page to confirm the structure and hosting environment were working correctly.</li>
+        <li><a href="./assignments/assignment-2/">Assignment 2 – Website Creation</a> — the main site structure, navigation, and layout you’re viewing now.</li>
+      </ul>
     </section>
 
     <section class="card">
-      <h2>Daytona State College</h2>
-      <p>Visit <a href="https://daytonastate.edu" target="_blank" rel="noopener">Daytona State College</a> for more information about the program.</p>
-    </section>
-
-    <section class="card">
-      <h2>Project Repository</h2>
-      <p>You can view the source code for this site on <a href="https://github.com/danny-kuehn/COP4813" target="_blank" rel="noopener">GitHub</a>.</p>
+      <h2>Useful Links</h2>
+      <p>Visit <a href="https://daytonastate.edu" target="_blank" rel="noopener">Daytona State College</a> for program details, or browse the code on <a href="https://github.com/danny-kuehn/COP4813" target="_blank" rel="noopener">GitHub</a>.</p>
     </section>
   </main>
 
