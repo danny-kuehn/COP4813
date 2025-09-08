@@ -8,51 +8,18 @@
       content="About – COP4813 project site for Daytona State College."
     />
     <title>About – Daniel Kuehn</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="prefetch" href="/header.html" />
+    <link rel="prefetch" href="/footer.html" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container">
-        <div class="brand">
-          <h1>Daniel Kuehn</h1>
-          <p class="subtitle">
-            COP4813 – Web Systems I · Daytona State College
-          </p>
-        </div>
-        <nav class="site-nav" aria-label="Primary navigation">
-          <ul role="menubar">
-            <li><a href="index.html">Home</a></li>
-            <li class="has-submenu">
-              <a
-                href="./assignments/"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >My Assignments</a
-              >
-              <ul class="submenu" role="menu" aria-label="Assignments">
-                <li role="none">
-                  <a role="menuitem" href="./assignments/assignment-1/"
-                    >Assignment 1</a
-                  >
-                </li>
-                <li role="none">
-                  <a role="menuitem" href="./assignments/assignment-2/"
-                    >Assignment 2</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li><a aria-current="page" href="about.html">About</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <div id="header" class="is-loading"></div>
 
     <main id="main" class="container">
       <section class="card">
         <h2>About Me</h2>
         <figure>
-          <img src="./assets/img/me.png" alt="Portrait of Daniel Kuehn." />
+          <img src="/assets/img/me.png" alt="Portrait of Daniel Kuehn." />
           <figcaption>
             Hi! I’m Daniel — BSIT student at Daytona State College.
           </figcaption>
@@ -74,7 +41,7 @@
         <h2>Jeff the Cat</h2>
         <figure>
           <img
-            src="./assets/img/jeff.png"
+            src="/assets/img/jeff.png"
             alt="A photo of Jeff, my orange cat, sitting in the backyard."
           />
           <figcaption>This is Jeff. He’s orange—need I say more?</figcaption>
@@ -86,10 +53,9 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p>© 2025 Daniel Kuehn · BSIT Student · Daytona State College</p>
-      </div>
-    </footer>
+    <div id="footer" class="is-loading"></div>
+
+    <script src="/assets/js/header.js" defer></script>
+    <script src="/assets/js/footer.js" defer></script>
   </body>
 </html>
