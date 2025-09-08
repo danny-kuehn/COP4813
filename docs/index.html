@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="hf-wait">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,12 +8,16 @@
       content="COP4813 project site for Daytona State College."
     />
     <title>Daniel Kuehn – COP4813 Portfolio</title>
+
     <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="prefetch" href="/header.html" />
-    <link rel="prefetch" href="/footer.html" />
+
+    <link rel="preload" href="/header.html" as="fetch" />
+    <link rel="preload" href="/footer.html" as="fetch" />
+
+    <script src="/assets/js/fragments.js" defer></script>
   </head>
   <body>
-    <div id="header" class="is-loading"></div>
+    <div id="header"></div>
 
     <main id="main" class="container">
       <section class="card">
@@ -61,9 +65,6 @@
       </section>
     </main>
 
-    <div id="footer" class="is-loading"></div>
-
-    <script src="/assets/js/header.js" defer></script>
-    <script src="/assets/js/footer.js" defer></script>
+    <div id="footer"></div>
   </body>
 </html>
