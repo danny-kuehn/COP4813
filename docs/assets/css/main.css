@@ -61,12 +61,13 @@ body {
   margin-top: 0.5rem; /* small breathing room */
 }
 
-.site-nav ul {
+/* Top-level menu */
+.site-nav > ul {
   list-style: none;
   margin: 0;
   padding: 0.5rem 0;
-  display: flex; /* make it horizontal */
-  gap: 1rem; /* space between items */
+  display: flex; /* horizontal */
+  gap: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
 
@@ -81,6 +82,21 @@ body {
 .site-nav a:hover,
 .site-nav a:focus {
   background: rgba(255, 255, 255, 0.18);
+}
+
+/* Active/current-page styles */
+.site-nav a.active,
+.site-nav a[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.35);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* If a submenu item is active, style the parent link */
+.site-nav .has-submenu.active > a {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-weight: 600;
 }
 
 /* Dropdown */
@@ -121,6 +137,7 @@ body {
   white-space: nowrap;
 }
 
+/* Show submenu on hover or keyboard focus */
 .site-nav .has-submenu:hover .submenu,
 .site-nav .has-submenu:focus-within .submenu {
   display: flex;

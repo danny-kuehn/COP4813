@@ -1,4 +1,5 @@
 import { injectFragments } from "./fragments/injectFragments.js";
+import { highlightCurrentNavLink } from "./ui/nav-active.js";
 import { initTouchMenus } from "./ui/touchMenus.js";
 import { domReady } from "./utils/domReady.js";
 
@@ -18,5 +19,6 @@ import { domReady } from "./utils/domReady.js";
     document.documentElement.classList.add("hf-ready");
   } finally {
     initTouchMenus();
+    highlightCurrentNavLink();
   }
 })();
