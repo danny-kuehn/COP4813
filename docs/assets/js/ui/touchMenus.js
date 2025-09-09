@@ -1,5 +1,5 @@
 export function initTouchMenus() {
-  // Only enable the “first tap opens” behavior on touch-first devices
+  // Only enable the "first tap opens" behavior on touch-first devices
   const isTouchPrimary =
     matchMedia("(hover: none)").matches ||
     matchMedia("(pointer: coarse)").matches;
