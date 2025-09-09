@@ -221,7 +221,10 @@ figure {
   text-decoration: underline;
 }
 
-/* Hide the page until header+footer are injected */
-.hf-wait body {
+/* Hide content until header/footer are injected */
+html.hf-wait body {
   visibility: hidden;
+}
+html.hf-ready body {
+  visibility: visible;
 }
