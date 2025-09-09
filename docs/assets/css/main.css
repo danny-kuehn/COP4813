@@ -22,8 +22,6 @@ body {
   line-height: 1.6;
   color: #1a1a1a;
   background: #fafafa;
-
-  /* Flex layout to push footer to bottom on short pages */
   display: flex;
   flex-direction: column;
 }
@@ -38,40 +36,48 @@ body {
 .site-header {
   background: #0a66c2;
   color: #fff;
+  padding: 0.75rem 0 0; /* room for the nav strip below */
 }
+
 .site-header .brand {
-  padding: 1.25rem 0 0.5rem;
+  padding: 1rem 0 0.5rem;
 }
-.site-header h1 {
+
+.course-title {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.6rem; /* slightly larger for visibility */
+  font-weight: 700;
 }
+
 .subtitle {
-  margin: 0.25rem 0 0;
+  margin: 0.2rem 0 0;
   opacity: 0.9;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 /* Navigation */
 .site-nav {
   position: relative;
+  margin-top: 0.5rem; /* small breathing room */
 }
+
 .site-nav ul {
   list-style: none;
   margin: 0;
-  padding: 0 0 1rem 0;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  padding: 0.5rem 0;
+  display: flex; /* make it horizontal */
+  gap: 1rem; /* space between items */
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
+
 .site-nav a {
   color: #eaf3ff;
   text-decoration: none;
-  padding: 0.4rem 0.6rem;
+  padding: 0.35rem 0.6rem;
   border-radius: 0.4rem;
   display: inline-block;
 }
-.site-nav a[aria-current="page"],
+
 .site-nav a:hover,
 .site-nav a:focus {
   background: rgba(255, 255, 255, 0.18);
@@ -81,9 +87,11 @@ body {
 .site-nav li {
   position: relative;
 }
+
 .site-nav .has-submenu > a {
   padding-right: 1.8rem;
 }
+
 .site-nav .has-submenu > a::after {
   content: "▾";
   position: absolute;
@@ -93,6 +101,7 @@ body {
   font-size: 0.8rem;
   opacity: 0.9;
 }
+
 .site-nav .submenu {
   position: absolute;
   left: 0;
@@ -107,9 +116,11 @@ body {
   gap: 0.25rem;
   z-index: 1000;
 }
+
 .site-nav .submenu a {
   white-space: nowrap;
 }
+
 .site-nav .has-submenu:hover .submenu,
 .site-nav .has-submenu:focus-within .submenu {
   display: flex;
@@ -135,6 +146,7 @@ h2,
 h3 {
   line-height: 1.25;
 }
+
 h2 {
   margin-top: 0.25rem;
 }
@@ -143,31 +155,36 @@ h2 {
 a {
   color: #0a66c2;
 }
+
 a:hover,
 a:focus {
   text-decoration: underline;
 }
 
-/* Images */
+/* ========== Images ========== */
 img {
   max-width: 100%;
   height: auto;
   display: block;
   border-radius: 0.5rem;
 }
+
 .card img {
-  max-width: 500px;
+  max-width: 90%; /* scale relative to container width */
   margin-left: auto;
   margin-right: auto;
 }
+
 figure {
   text-align: center;
   margin: 0;
 }
-figcaption {
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 0.5rem;
+
+/* Desktop refinement */
+@media (min-width: 720px) {
+  .card img {
+    max-width: 300px; /* cap image size on larger screens */
+  }
 }
 
 /* ========== Footer ========== */
@@ -175,22 +192,33 @@ figcaption {
   background: #fff;
   border-top: 1px solid #e6e6e6;
   padding: 1rem 0;
-}
-.site-footer p {
-  margin: 0.25rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-/* ========== Responsive Tweaks ========== */
-@media (min-width: 720px) {
-  .site-header .brand {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-  .subtitle {
-    text-align: right;
-  }
+.site-footer p {
+  margin: 0;
+}
+
+.footer-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-nav a {
+  color: #0a66c2;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+  text-decoration: underline;
 }
 
 /* Hide the page until header+footer are injected */
