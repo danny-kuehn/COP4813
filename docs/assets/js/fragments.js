@@ -1,4 +1,3 @@
-// /assets/js/fragments.js
 (async function () {
   try {
     // Kick off both requests in parallel (uses preload cache if available)
