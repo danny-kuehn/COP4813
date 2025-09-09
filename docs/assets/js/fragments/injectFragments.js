@@ -14,22 +14,32 @@ export async function injectFragments({
   footer,
   revealClass, // { remove?: string, add?: string }
 }) {
-  const [headerHTML, footerHTML] = await Promise.all([
-    header ? fetchHTML(header.url) : Promise.resolve(""),
-    footer ? fetchHTML(footer.url) : Promise.resolve(""),
-  ]);
+  const parts = [
+    ["header", header],
+    ["footer", footer],
+  ].filter(([, cfg]) => !!cfg);
 
-  if (header?.selector) {
-    const el = document.querySelector(header.selector);
-    if (el) el.innerHTML = headerHTML;
-  }
-  if (footer?.selector) {
-    const el = document.querySelector(footer.selector);
-    if (el) el.innerHTML = footerHTML;
-  }
+  // Fetch in parallel; continue even if one fails
+  const results = await Promise.allSettled(
+    parts.map(([, cfg]) => fetchHTML(cfg.url)),
+  );
 
-  // Reveal after injection
-  if (revealClass?.remove)
+  results.forEach((result, i) => {
+    const [, cfg] = parts[i];
+    const el = cfg?.selector ? document.querySelector(cfg.selector) : null;
+    if (!el) return;
+
+    if (result.status === "fulfilled") {
+      el.innerHTML = result.value;
+    } else {
+      console.warn("[fragments] failed:", cfg.url, result.reason);
+    }
+  });
+
+  if (revealClass?.remove) {
     document.documentElement.classList.remove(revealClass.remove);
-  if (revealClass?.add) document.documentElement.classList.add(revealClass.add);
+  }
+  if (revealClass?.add) {
+    document.documentElement.classList.add(revealClass.add);
+  }
 }
