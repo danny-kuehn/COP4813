@@ -2,36 +2,23 @@ export function highlightCurrentNavLink() {
   const nav = document.querySelector(".site-nav");
   if (!nav) return;
 
-  const normalize = (p) => {
-    let n = p.replace(/\/+$/, "");
-    return n === "" ? "/" : n;
-  };
+  const normalize = (p) =>
+    p
+      .replace(/\/index\.html?$/i, "/") // collapse index.html
+      .replace(/\/+$/, "") || "/"; // trim trailing slash, ensure root
 
-  const pagePath = normalize(window.location.pathname);
-  const links = nav.querySelectorAll("a[href]");
-  let best = null;
+  const pagePath = normalize(location.pathname);
 
-  links.forEach((link) => {
-    const linkPath = normalize(
-      new URL(link.getAttribute("href"), window.location.origin).pathname,
-    );
-    const exact =
+  nav.querySelectorAll("a[href]").forEach((link) => {
+    const linkPath = normalize(new URL(link.href, location.origin).pathname);
+
+    if (
       linkPath === pagePath ||
-      (pagePath === "/" && (linkPath === "/" || linkPath === "/index.html"));
-    const section =
-      !exact &&
-      linkPath !== "/" &&
-      (pagePath === linkPath || pagePath.startsWith(linkPath + "/"));
-
-    if (exact && !best) best = link;
-    if (section && !best) best = link;
+      (linkPath !== "/" && pagePath.startsWith(linkPath + "/"))
+    ) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
+      link.closest(".has-submenu")?.classList.add("active");
+    }
   });
-
-  if (best) {
-    best.classList.add("active");
-    best.setAttribute("aria-current", "page");
-
-    const parent = best.closest(".has-submenu");
-    if (parent) parent.classList.add("active");
-  }
 }
