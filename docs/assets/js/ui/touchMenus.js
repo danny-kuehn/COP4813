@@ -1,40 +1,26 @@
 export function initTouchMenus() {
-  // Only enable the "first tap opens" behavior on touch-first devices
-  const isTouchPrimary =
-    matchMedia("(hover: none)").matches ||
-    matchMedia("(pointer: coarse)").matches;
-
-  if (!isTouchPrimary) return; // Desktop/laptop: default behavior
+  if (!matchMedia("(hover: none), (pointer: coarse)").matches) return;
 
   document.querySelectorAll(".has-submenu > a").forEach((link) => {
-    const submenu = link.nextElementSibling;
-    if (!submenu) return;
+    const menu = link.nextElementSibling;
+    if (!menu) return;
 
-    let opened = false;
+    link.addEventListener("click", (e) => {
+      if (link.getAttribute("aria-expanded") !== "true") {
+        e.preventDefault();
+        menu.style.display = "flex";
+        link.setAttribute("aria-expanded", "true");
 
-    link.addEventListener(
-      "click",
-      (e) => {
-        if (!opened) {
-          e.preventDefault();
-          submenu.style.display = "flex";
-          link.setAttribute("aria-expanded", "true");
-          opened = true;
-
-          const onDocClick = (evt) => {
-            if (!submenu.contains(evt.target) && !link.contains(evt.target)) {
-              submenu.style.display = "";
-              link.setAttribute("aria-expanded", "false");
-              opened = false;
-              document.removeEventListener("click", onDocClick, true);
-            }
-          };
-
-          document.addEventListener("click", onDocClick, true);
-        }
-        // Second tap: allow normal navigation
-      },
-      { passive: false },
-    );
+        const close = (evt) => {
+          if (!menu.contains(evt.target) && evt.target !== link) {
+            menu.style.display = "";
+            link.setAttribute("aria-expanded", "false");
+            document.removeEventListener("click", close, true);
+          }
+        };
+        document.addEventListener("click", close, true);
+      }
+      // second tap → normal navigation
+    });
   });
 }
