@@ -1,0 +1,113 @@
+#contact-form-section .field,
+#confirmSection .field {
+  margin-bottom: 0.9rem;
+}
+
+#contact-form-section .field-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+}
+
+@media (min-width: 720px) {
+  #contact-form-section .field-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #contact-form-section .field-grid .field:nth-child(1),
+  #contact-form-section .field-grid .field:nth-child(2) {
+    /* For the first name/last name or city/state/zip pairs on desktop */
+    grid-column: span 1;
+  }
+}
+
+#contact-form-section label,
+#confirmSection label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+#contact-form-section input,
+#contact-form-section select,
+#contact-form-section textarea {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 0.5rem;
+  font: inherit;
+  background: #fff;
+}
+
+#contact-form-section input:focus,
+#contact-form-section select:focus,
+#contact-form-section textarea:focus {
+  outline: none;
+  border-color: #0a66c2;
+  box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.15);
+}
+
+.error {
+  margin: 0.25rem 0 0;
+  color: #b00020;
+  font-size: 0.9rem;
+  min-height: 1.1em;
+}
+
+.error-summary {
+  border: 1px solid #b00020;
+  background: #ffe8ec;
+  color: #5a000f;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  background: #0a66c2;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:hover,
+.btn:focus {
+  filter: brightness(0.95);
+}
+
+.btn-secondary {
+  background: #eef5ff;
+  color: #0a66c2;
+  border: 1px solid #cfe3ff;
+}
+
+.muted {
+  color: #666;
+}
+
+.small {
+  font-size: 0.9rem;
+}
+
+.confirm-list {
+  display: grid;
+  grid-template-columns: 12ch 1fr;
+  gap: 0.4rem 1rem;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.confirm-list dt {
+  font-weight: 700;
+}
+
+.confirm-list dd {
+  margin: 0;
+}

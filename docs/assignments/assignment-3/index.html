@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en" class="hf-wait">
+  <head>
+    <title>Assignment 3 – Forms</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Assignment 3 – Forms" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script type="module" src="/assets/js/main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="header"><noscript>Header requires JavaScript.</noscript></div>
+
+    <main id="main" class="container">
+      <section class="card">
+        <h2>Assignment 3 – Forms</h2>
+        <p>
+          For Assignment 3, I created an input form with HTML5 and JavaScript
+          that collects user details such as name, address, phone, email, birth
+          date, and a message. The form validates each field to prevent blanks
+          or invalid entries, applies an input mask for phone numbers, and
+          checks formats for email and dates. After submission, the entered
+          information is shown on a confirmation page for the user to review
+          before it is sent using the mailto action.
+        </p>
+      </section>
+
+      <section id="contact-form-section" class="card">
+        <h3>Contact Information</h3>
+        <p class="muted">All fields are required.</p>
+
+        <form id="contactForm" novalidate>
+          <!-- Name -->
+          <div class="field-grid">
+            <div class="field">
+              <label for="firstName">First name</label>
+              <input
+                id="firstName"
+                name="firstName"
+                type="text"
+                autocomplete="given-name"
+                required
+              />
+              <p class="error" data-for="firstName" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="lastName">Last name</label>
+              <input
+                id="lastName"
+                name="lastName"
+                type="text"
+                autocomplete="family-name"
+                required
+              />
+              <p class="error" data-for="lastName" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <!-- Address -->
+          <div class="field">
+            <label for="address">Street address</label>
+            <input
+              id="address"
+              name="address"
+              type="text"
+              autocomplete="address-line1"
+              required
+            />
+            <p class="error" data-for="address" aria-live="polite"></p>
+          </div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="city">City</label>
+              <input
+                id="city"
+                name="city"
+                type="text"
+                autocomplete="address-level2"
+                required
+              />
+              <p class="error" data-for="city" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="state">State</label>
+              <select
+                id="state"
+                name="state"
+                autocomplete="address-level1"
+                required
+              >
+                <option value="">Select…</option>
+                <option>AL</option>
+                <option>AK</option>
+                <option>AZ</option>
+                <option>AR</option>
+                <option>CA</option>
+                <option>CO</option>
+                <option>CT</option>
+                <option>DE</option>
+                <option>FL</option>
+                <option>GA</option>
+                <option>HI</option>
+                <option>ID</option>
+                <option>IL</option>
+                <option>IN</option>
+                <option>IA</option>
+                <option>KS</option>
+                <option>KY</option>
+                <option>LA</option>
+                <option>ME</option>
+                <option>MD</option>
+                <option>MA</option>
+                <option>MI</option>
+                <option>MN</option>
+                <option>MS</option>
+                <option>MO</option>
+                <option>MT</option>
+                <option>NE</option>
+                <option>NV</option>
+                <option>NH</option>
+                <option>NJ</option>
+                <option>NM</option>
+                <option>NY</option>
+                <option>NC</option>
+                <option>ND</option>
+                <option>OH</option>
+                <option>OK</option>
+                <option>OR</option>
+                <option>PA</option>
+                <option>RI</option>
+                <option>SC</option>
+                <option>SD</option>
+                <option>TN</option>
+                <option>TX</option>
+                <option>UT</option>
+                <option>VT</option>
+                <option>VA</option>
+                <option>WA</option>
+                <option>WV</option>
+                <option>WI</option>
+                <option>WY</option>
+              </select>
+              <p class="error" data-for="state" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="zip">ZIP code</label>
+              <input
+                id="zip"
+                name="zip"
+                type="text"
+                inputmode="numeric"
+                pattern="\d{5}(-\d{4})?"
+                required
+              />
+              <p class="error" data-for="zip" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <!-- Phone & Email -->
+          <div class="field-grid">
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                inputmode="tel"
+                maxlength="14"
+                required
+              />
+              <p class="error" data-for="phone" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              />
+              <p class="error" data-for="email" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <!-- Birth Date -->
+          <div class="field">
+            <label for="birthdate">Birth date</label>
+            <input
+              id="birthdate"
+              name="birthdate"
+              type="date"
+              max="2025-09-13"
+              required
+            />
+            <p class="error" data-for="birthdate" aria-live="polite"></p>
+          </div>
+
+          <!-- Message -->
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              maxlength="1500"
+              required
+            ></textarea>
+            <p class="error" data-for="message" aria-live="polite"></p>
+          </div>
+
+          <!-- Simple CAPTCHA -->
+          <div class="field-grid">
+            <div class="field">
+              <label id="captchaLabel" for="captchaAnswer"
+                >Security check</label
+              >
+              <input
+                id="captchaAnswer"
+                name="captchaAnswer"
+                type="text"
+                inputmode="numeric"
+                autocomplete="off"
+                required
+              />
+              <p class="error" data-for="captcha" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <!-- Error summary -->
+          <div
+            id="errorSummary"
+            class="error-summary"
+            role="alert"
+            aria-live="assertive"
+            hidden
+          ></div>
+
+          <div class="actions">
+            <button type="reset" class="btn btn-secondary">Reset</button>
+            <button type="submit" class="btn">Review &amp; Confirm</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Confirmation Section -->
+      <section id="confirmSection" class="card" hidden>
+        <h3>Confirm Your Details</h3>
+        <dl class="confirm-list" id="confirmList"></dl>
+        <div class="actions">
+          <button id="editBtn" class="btn btn-secondary">Edit</button>
+          <button id="sendBtn" class="btn">Send</button>
+        </div>
+        <p class="muted small">
+          When you click <strong>Send</strong>, your email client will open
+          using mailto:daniel@kuehn.foo with your details.
+        </p>
+      </section>
+    </main>
+
+    <div id="footer"><noscript>Footer requires JavaScript.</noscript></div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
