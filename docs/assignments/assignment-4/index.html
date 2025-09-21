@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Assignment 4 – Plotting</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Assignment 4 – Plotting" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script type="module" src="/assets/js/main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+
+  <body>
+    <div id="header"><noscript>Header requires JavaScript.</noscript></div>
+
+    <main id="main" class="container">
+      <section class="card">
+        <h2>Assignment 4 – Plotting</h2>
+        <p>
+          For this assignment, I created a calculator for the damped harmonic
+          oscillator:
+          <code>y(x) = A · e<sup>-βx</sup> · cos(ωx)</code>. The user can input
+          amplitude (A), damping coefficient (β), frequency (ω), and a range for
+          x. The calculator will compute values and display an interactive plot
+          using the Plotly.js library.
+        </p>
+      </section>
+
+      <section class="card">
+        <form id="equationForm">
+          <label for="amplitude">Amplitude (A):</label>
+          <input type="number" id="amplitude" value="1" step="0.1" />
+
+          <label for="damping">Damping (β):</label>
+          <input type="number" id="damping" value="0.1" step="0.01" />
+
+          <label for="frequency">Frequency (ω):</label>
+          <input type="number" id="frequency" value="2" step="0.1" />
+
+          <label for="xMin">X Min:</label>
+          <input type="number" id="xMin" value="0" />
+
+          <label for="xMax">X Max:</label>
+          <input type="number" id="xMax" value="20" />
+
+          <label for="xStep">Step size:</label>
+          <input type="number" id="xStep" value="0.1" step="0.1" />
+
+          <button type="button" id="plotBtn">Plot</button>
+        </form>
+      </section>
+
+      <section class="card" id="plotCard" style="display: none">
+        <h3>Plot Output</h3>
+        <div id="plot"></div>
+      </section>
+    </main>
+
+    <div id="footer"><noscript>Footer requires JavaScript.</noscript></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
