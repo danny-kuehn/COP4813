@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" class="hf-wait">
+  <head>
+    <title>Assignment 5 – Canvas</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Assignment 5 – Canvas" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script type="module" src="/assets/js/main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <div id="header"><noscript>Header requires JavaScript.</noscript></div>
+
+    <main id="main" class="container">
+      <section class="card">
+        <h2>Assignment 5 – Canvas</h2>
+        <p>
+          Assignment 5 was a Spirograph generator, where users enter values for
+          <code>R</code>, <code>r</code>, and <code>O</code> to draw looping
+          patterns on a canvas. Leaving any box empty will generate a random
+          value for that parameter.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>Enter Parameters</h3>
+        <form id="spiroForm">
+          <label>
+            R (outer radius)
+            <input type="number" id="R" value="120" min="10" max="250" />
+          </label>
+          <label>
+            r (inner radius)
+            <input type="number" id="r" value="35" min="5" max="120" />
+          </label>
+          <label>
+            O (pen offset)
+            <input type="number" id="O" value="50" min="1" max="120" />
+          </label>
+          <button type="button" id="spiroBtn">Draw Spirograph</button>
+        </form>
+      </section>
+
+      <section class="card" id="spiroCard" style="display: none">
+        <h3>Your Spirograph</h3>
+        <canvas id="spiroCanvas" width="400" height="400"></canvas>
+      </section>
+    </main>
+
+    <div id="footer"><noscript>Footer requires JavaScript.</noscript></div>
+  </body>
+</html>
