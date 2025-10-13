@@ -1,0 +1,68 @@
+#controls {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#deal-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #0a66c2;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#deal-btn:hover {
+  background: #084c96;
+}
+
+#game-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.card-img {
+  width: 80px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  cursor: grab;
+  transition: transform 0.2s ease;
+}
+
+.card-img:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+}
+
+#discard-pile {
+  border: 2px dashed #ccc;
+  border-radius: 0.75rem;
+  width: 120px;
+  height: 160px;
+  margin: 2rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  background: #f9f9f9;
+  transition: border-color 0.2s ease;
+}
+
+#discard-pile.drag-over {
+  border-color: #0a66c2;
+  background: #eaf3ff;
+  color: #0a66c2;
+}
+
+#event-message {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #0a66c2;
+}
