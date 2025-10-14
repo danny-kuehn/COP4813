@@ -4,43 +4,43 @@
       "name": "Ubuntu",
       "url": "https://ubuntu.com",
       "packageManager": "apt",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo-ubuntu_cof-orange-hex.svg"
+      "logo": "img/ubuntu.svg"
     },
     {
       "name": "Fedora",
       "url": "https://fedoraproject.org",
       "packageManager": "dnf",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Fedora_logo.svg"
+      "logo": "img/fedora.svg"
     },
     {
       "name": "Debian",
       "url": "https://debian.org",
       "packageManager": "apt",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/6/66/Openlogo-debianV2.svg"
+      "logo": "img/debian.svg"
     },
     {
       "name": "Arch Linux",
       "url": "https://archlinux.org",
       "packageManager": "pacman",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/1/13/Arch_Linux_%22Crystal%22_icon.svg"
+      "logo": "img/arch.svg"
     },
     {
       "name": "openSUSE",
       "url": "https://opensuse.org",
       "packageManager": "zypper",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d1/OpenSUSE_Button.svg"
+      "logo": "img/suse.svg"
     },
     {
       "name": "Linux Mint",
       "url": "https://linuxmint.com",
       "packageManager": "apt",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Linux_Mint_logo_without_wordmark.svg"
+      "logo": "img/mint.svg"
     },
     {
       "name": "Kali Linux",
       "url": "https://kali.org",
       "packageManager": "apt",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Kali-dragon-icon.svg"
+      "logo": "img/kali.svg"
     }
   ]
 }
