@@ -7,7 +7,7 @@ const suits = ["S", "H", "C", "D"];
 const deck = [];
 for (const s of suits) {
   for (let i = 1; i <= 13; i++) {
-    deck.push(`cards/${s}${i}.svg`);
+    deck.push(`img/${s}${i}.svg`);
   }
 }
 
