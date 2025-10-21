@@ -1,0 +1,18 @@
+#animation-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+canvas {
+  background-color: #f0f4f8;
+  border: 2px solid #0a66c2;
+  border-radius: 0.5rem;
+  width: 95%;
+  max-width: 640px;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  touch-action: none;
+  display: block;
+}
