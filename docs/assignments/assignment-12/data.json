@@ -1,0 +1,42 @@
+[
+  {
+    "name": "WordPress",
+    "support": "Open Source, supported by most hosting companies",
+    "technology": "PHP/MySQL",
+    "capabilities": "Supports themes, plugins, and provides a public REST API",
+    "limitations": "Security vulnerabilities, frequent updates required",
+    "example": "https://nasa.gov"
+  },
+  {
+    "name": "Drupal",
+    "support": "Open Source, maintained by the Drupal Association",
+    "technology": "PHP/MySQL",
+    "capabilities": "Highly customizable, supports complex content structures, multilingual support",
+    "limitations": "Steep learning curve, fewer ready-made themes than WordPress",
+    "example": "https://damfailures.org"
+  },
+  {
+    "name": "Joomla",
+    "support": "Open Source, supported by Open Source Matters, Inc.",
+    "technology": "PHP/MySQL",
+    "capabilities": "User management, multilingual support, large extension library",
+    "limitations": "Plugin compatibility issues, less beginner-friendly",
+    "example": "https://literacysomerset.org"
+  },
+  {
+    "name": "Ghost",
+    "support": "Open Source, developed by the Ghost Foundation",
+    "technology": "Node.js/SQLite (or MySQL)",
+    "capabilities": "Focus on blogging, clean UI, fast performance, RESTful API",
+    "limitations": "Limited plugins, not ideal for complex multi-page sites",
+    "example": "https://readtangle.com"
+  },
+  {
+    "name": "Squarespace",
+    "support": "Commercial (Squarespace, Inc.)",
+    "technology": "Proprietary platform, runs on cloud infrastructure",
+    "capabilities": "Drag-and-drop site builder, hosting included, responsive templates",
+    "limitations": "Limited customization, higher cost, no access to underlying code",
+    "example": "https://banditsnyc.com"
+  }
+]
