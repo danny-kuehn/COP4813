@@ -1,0 +1,152 @@
+{
+  "program": "Computer Science",
+  "levels": {
+    "1000": [
+      {
+        "code": "COP1000",
+        "name": "Introduction to Programming",
+        "description": "Introduces structured program logic and basic programming concepts, including algorithms, flowcharts, debugging, documentation, and pseudocode. No prior programming experience required.",
+        "credits": 3,
+        "prereqs": [],
+        "offered": ["Fall", "Spring", "Summer"],
+        "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/1000/cop1000"
+      }
+    ],
+    "2000": [
+      {
+        "code": "COP2071",
+        "name": "Querying Database",
+        "description": "Teaches fundamental Transact-SQL skills for Microsoft SQL Server, including writing basic queries and performing core database tasks.",
+        "credits": 3,
+        "prereqs": [["COP1000"]],
+        "offered": ["Fall"],
+        "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/2000/cop2071"
+      },
+      {
+        "code": "COP2072",
+        "name": "Reporting Services",
+        "description": "Covers the full process of creating and publishing reports using integrated reporting tools. Students learn to design reports, use builders and wizards, and apply data analysis techniques.",
+        "credits": 3,
+        "prereqs": [["COP1000"]],
+        "offered": ["Spring"],
+        "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/2000/cop2072"
+      },
+      {
+        "code": "COP2220",
+        "name": "Computer Programming C",
+        "description": "Introduces the C programming language through hands-on projects. Covers arrays, pointers, functions, I/O, data structures, and debugging across multiple platforms.",
+        "credits": 3,
+        "prereqs": [["COP1000", "MAC1105"]],
+        "offered": ["Fall", "Spring"],
+        "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/2000/cop2220"
+      },
+      {
+        "code": "COP2360",
+        "name": "Computer Programming C#",
+        "description": "Covers programming in Microsoft Visual C# with an emphasis on object-oriented concepts such as control structures, methods, arrays, exception handling, and inheritance.",
+        "credits": 3,
+        "prereqs": [["COP1000"]],
+        "offered": ["Fall", "Spring", "Summer"],
+        "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/2000/cop2360"
+      },
+      {
+        "code": "COP2700",
+        "name": "Introduction to Database Management",
+        "description": "Introduces database management concepts, including relational design, modeling, and implementation using SQL. Covers data definition and manipulation, data warehousing, and NoSQL systems.",
+        "credits": 3,
+        "prereqs": [],
+        "offered": ["Fall", "Spring", "Summer"],
+        "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/2000/cop2700"
+      },
+      {
+        "code": "COP2800",
+        "name": "Computer Programming Java",
+        "description": "Introduces object-oriented programming with Java, covering classes, inheritance, polymorphism, interfaces, and generics. Emphasizes hands-on projects and real-world problem solving.",
+        "credits": 3,
+        "prereqs": [["COP1000"]],
+        "offered": ["Fall", "Spring"],
+        "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/2000/cop2800"
+      },
+      {
+        "code": "COP2905",
+        "name": "Directed Study in Computer Programming",
+        "description": "Independent or team projects in computer programming focused on design, development, and implementation under faculty supervision. Content varies and may be repeated for credit.",
+        "credits": 1,
+        "prereqs": [],
+        "offered": ["Fall", "Spring", "Summer"],
+        "notes": "Requires permission of the Computer Science chairperson.",
+        "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/2000/cop2905"
+      },
+      {
+        "code": "COP2949",
+        "name": "Internship in Computer Programming",
+        "description": "Provides hands-on experience in a real work environment, emphasizing professional development, problem solving, ethics, and organizational practices.",
+        "credits": "1-4",
+        "prereqs": [],
+        "offered": ["Fall", "Spring", "Summer"],
+        "notes": "Requires prior meeting with the Internship Coordinator for registration. Students must complete 80–320 field hours based on credit hours (1 credit = 80 hours).",
+        "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/2000/cop2949"
+      }
+    ],
+    "3000": [
+      {
+        "code": "COP3530",
+        "name": "Data Structures",
+        "description": "This course introduces fundamentals of data structures. Topics include: programming strategies, data structures, searching, complexity, queues, sorting, and algorithms. Extensive programming is required.",
+        "credits": 3,
+        "prereqs": [["COP2220", "COP2360", "COP2800"]],
+        "offered": ["Fall", "Spring"],
+        "notes": "Also requires COT3100 or MAD2104 (not included in advisor).",
+        "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/3000/cop3530"
+      }
+    ],
+    "4000": [
+      {
+        "code": "COP4610",
+        "name": "Operating Systems",
+        "description": "Covers modern operating system concepts including memory, process, file, and device management, with an overview of system types and administration.",
+        "credits": 3,
+        "prereqs": [],
+        "offered": ["Fall", "Spring"],
+        "notes": "Requires CTS3348 (not included in advisor).",
+        "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/4000/cop4610"
+      },
+      {
+        "code": "COP4708",
+        "name": "Applied Database I",
+        "description": "Focuses on the design and implementation of database systems emphasizing central administration and structured data storage. Includes a required programming project.",
+        "credits": 3,
+        "prereqs": [["COP2220", "COP2360", "COP2800"]],
+        "offered": ["Fall", "Spring"],
+        "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/4000/cop4708"
+      },
+      {
+        "code": "COP4709",
+        "name": "Applied Database II",
+        "description": "Explores relational and advanced database systems, including SQL programming, stored procedures, transactions, and decision support concepts. Programming experience required.",
+        "credits": 3,
+        "prereqs": [["COP4708"]],
+        "offered": ["Spring"],
+        "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/4000/cop4709"
+      },
+      {
+        "code": "COP4813",
+        "name": "Web Systems I",
+        "description": "Covers client-side web development using HTML, CSS, and JavaScript. Includes DOM manipulation, accessibility, JSON, and mobile-friendly design through a web project.",
+        "credits": 3,
+        "prereqs": [["COP3530"]],
+        "offered": ["Fall"],
+        "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/4000/cop4813"
+      },
+      {
+        "code": "COP4834",
+        "name": "Web Systems II",
+        "description": "Focuses on advanced web design using server-side .NET technologies. Students build and deploy database-driven web applications with cloud hosting and full-stack development practices.",
+        "credits": 3,
+        "prereqs": [["COP4813"]],
+        "offered": ["Spring"],
+        "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/4000/cop4834"
+      }
+    ]
+  }
+}

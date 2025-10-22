@@ -7,7 +7,10 @@
     <meta name="description" content="Assignment 11 – Dynamic Objects" />
     <link rel="stylesheet" href="/assets/css/main.css" />
     <script type="module" src="/assets/js/main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js" defer></script>
   </head>
+
   <body>
     <div id="header"><noscript>Header requires JavaScript.</noscript></div>
 
@@ -15,14 +18,27 @@
       <section class="card">
         <h2>Assignment 11 – Dynamic Objects</h2>
         <p>
-          <!-- Page description here -->
-          WIP
+          Assignment 11 introduces a dynamic class advising tool that helps
+          students determine which <strong>Computer Science</strong> courses
+          they are eligible to take. The application loads course data from a
+          JSON file, checks completed prerequisites, and displays available
+          classes with details such as descriptions, credits, and offerings. It
+          also supports "AND" and "OR" prerequisite logic and smooth scrolling
+          for a user-friendly advising experience.
         </p>
       </section>
 
       <section class="card">
-        <!-- Page content here -->
-        WIP
+        <h3>Select Completed Courses</h3>
+        <div id="course-list"></div>
+        <button id="check-eligibility" class="btn">
+          Show Eligible Classes
+        </button>
+      </section>
+
+      <section class="card" id="available-courses-section">
+        <h3>Available Courses</h3>
+        <div id="available-courses"></div>
       </section>
     </main>
 
