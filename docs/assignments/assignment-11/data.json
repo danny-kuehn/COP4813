@@ -18,7 +18,7 @@
         "name": "Querying Database",
         "description": "Teaches fundamental Transact-SQL skills for Microsoft SQL Server, including writing basic queries and performing core database tasks.",
         "credits": 3,
-        "prereqs": [["COP1000"]],
+        "prereqs": ["COP1000"],
         "offered": ["Fall"],
         "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/2000/cop2071"
       },
@@ -27,7 +27,7 @@
         "name": "Reporting Services",
         "description": "Covers the full process of creating and publishing reports using integrated reporting tools. Students learn to design reports, use builders and wizards, and apply data analysis techniques.",
         "credits": 3,
-        "prereqs": [["COP1000"]],
+        "prereqs": ["COP1000"],
         "offered": ["Spring"],
         "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/2000/cop2072"
       },
@@ -45,7 +45,7 @@
         "name": "Computer Programming C#",
         "description": "Covers programming in Microsoft Visual C# with an emphasis on object-oriented concepts such as control structures, methods, arrays, exception handling, and inheritance.",
         "credits": 3,
-        "prereqs": [["COP1000"]],
+        "prereqs": ["COP1000"],
         "offered": ["Fall", "Spring", "Summer"],
         "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/2000/cop2360"
       },
@@ -63,7 +63,7 @@
         "name": "Computer Programming Java",
         "description": "Introduces object-oriented programming with Java, covering classes, inheritance, polymorphism, interfaces, and generics. Emphasizes hands-on projects and real-world problem solving.",
         "credits": 3,
-        "prereqs": [["COP1000"]],
+        "prereqs": ["COP1000"],
         "offered": ["Fall", "Spring"],
         "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/2000/cop2800"
       },
@@ -125,7 +125,7 @@
         "name": "Applied Database II",
         "description": "Explores relational and advanced database systems, including SQL programming, stored procedures, transactions, and decision support concepts. Programming experience required.",
         "credits": 3,
-        "prereqs": [["COP4708"]],
+        "prereqs": ["COP4708"],
         "offered": ["Spring"],
         "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/4000/cop4709"
       },
@@ -134,7 +134,7 @@
         "name": "Web Systems I",
         "description": "Covers client-side web development using HTML, CSS, and JavaScript. Includes DOM manipulation, accessibility, JSON, and mobile-friendly design through a web project.",
         "credits": 3,
-        "prereqs": [["COP3530"]],
+        "prereqs": ["COP3530"],
         "offered": ["Fall"],
         "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/4000/cop4813"
       },
@@ -143,7 +143,7 @@
         "name": "Web Systems II",
         "description": "Focuses on advanced web design using server-side .NET technologies. Students build and deploy database-driven web applications with cloud hosting and full-stack development practices.",
         "credits": 3,
-        "prereqs": [["COP4813"]],
+        "prereqs": ["COP4813"],
         "offered": ["Spring"],
         "link": "https://daytonastate.smartcatalogiq.com/2025-2026/college-catalog/course-descriptions/cop-computer-science/4000/cop4834"
       }

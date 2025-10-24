@@ -48,7 +48,14 @@ function checkEligibility(levels) {
   const eligible = allCourses.filter((c) => {
     if (taken.includes(c.code)) return false;
     if (!c.prereqs.length) return true;
-    return c.prereqs.every((group) => group.some((req) => taken.includes(req)));
+
+    return c.prereqs.every((group) => {
+      if (Array.isArray(group)) {
+        return group.some((req) => taken.includes(req));
+      } else {
+        return taken.includes(group);
+      }
+    });
   });
 
   if (eligible.length === 0) {
@@ -75,9 +82,13 @@ function checkEligibility(levels) {
         grouped[level].forEach((c) => {
           const prereqText = c.prereqs.length
             ? c.prereqs
-                .map((group) =>
-                  group.length > 1 ? `(${group.join(" or ")})` : group[0],
-                )
+                .map((group) => {
+                  if (Array.isArray(group)) {
+                    const text = group.join(" or ");
+                    return c.prereqs.length > 1 ? `(${text})` : text;
+                  }
+                  return group;
+                })
                 .join(" and ")
             : "None";
 
