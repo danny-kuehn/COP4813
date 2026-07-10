@@ -5,6 +5,15 @@
   const editBtn = document.getElementById("editBtn");
   const sendBtn = document.getElementById("sendBtn");
   const errorSummary = document.getElementById("errorSummary");
+  const birthdateInput = document.getElementById("birthdate");
+
+  // Prevent selecting a future birth date.
+  const today = new Date();
+  birthdateInput.max = [
+    today.getFullYear(),
+    String(today.getMonth() + 1).padStart(2, "0"),
+    String(today.getDate()).padStart(2, "0"),
+  ].join("-");
 
   // Create simple CAPTCHA (random addition 1..9)
   const a = Math.floor(Math.random() * 9) + 1;
@@ -15,14 +24,13 @@
 
   // Helpers
   const setError = (name, message) => {
-    const p =
-      document.querySelector(`.error[data-for="${name}"]`) ||
-      document.querySelector(`.error[data-for="${name}"]`);
+    const p = document.querySelector(`.error[data-for="${name}"]`);
     if (p) p.textContent = message || "";
   };
 
   const gatherValues = () => {
     const formData = new FormData(form);
+
     return {
       firstName: formData.get("firstName")?.trim(),
       lastName: formData.get("lastName")?.trim(),
@@ -38,23 +46,29 @@
     };
   };
 
-  const isFutureDate = (yyyy_mm_dd) => {
-    if (!yyyy_mm_dd) return true;
+  const isFutureDate = (isoDate) => {
+    if (!isoDate) return true;
+
     const today = new Date();
-    const d = new Date(yyyy_mm_dd + "T00:00:00");
-    // Strip time from today
+    const date = new Date(`${isoDate}T00:00:00`);
+
+    // Strip time from today.
     today.setHours(0, 0, 0, 0);
-    return d.getTime() > today.getTime();
+
+    return date.getTime() > today.getTime();
   };
 
   // Phone input mask: (000) 000-0000
   const phoneInput = document.getElementById("phone");
+
   phoneInput.addEventListener("input", (e) => {
     const digits = e.target.value.replace(/\D/g, "").slice(0, 10);
     let out = "";
-    if (digits.length > 0) out = "(" + digits.slice(0, 3);
-    if (digits.length >= 4) out += ") " + digits.slice(3, 6);
-    if (digits.length >= 7) out += "-" + digits.slice(6, 10);
+
+    if (digits.length > 0) out = `(${digits.slice(0, 3)}`;
+    if (digits.length >= 4) out += `) ${digits.slice(3, 6)}`;
+    if (digits.length >= 7) out += `-${digits.slice(6, 10)}`;
+
     e.target.value = out;
   });
 
@@ -63,7 +77,7 @@
     let valid = true;
     const messages = [];
 
-    // Reset per-field errors
+    // Reset per-field errors.
     [
       "firstName",
       "lastName",
@@ -76,7 +90,8 @@
       "birthdate",
       "message",
       "captcha",
-    ].forEach((k) => setError(k, ""));
+    ].forEach((name) => setError(name, ""));
+
     errorSummary.hidden = true;
     errorSummary.textContent = "";
 
@@ -86,6 +101,7 @@
       setError("firstName", "First name is required.");
       messages.push("First name is required.");
     }
+
     if (!v.lastName) {
       valid = false;
       setError("lastName", "Last name is required.");
@@ -101,16 +117,19 @@
       );
       messages.push("Street address is invalid.");
     }
+
     if (!v.city) {
       valid = false;
       setError("city", "City is required.");
       messages.push("City is required.");
     }
+
     if (!v.state) {
       valid = false;
       setError("state", "Select a state.");
       messages.push("State is required.");
     }
+
     if (!/^\d{5}(-\d{4})?$/.test(v.zip || "")) {
       valid = false;
       setError("zip", "Enter a 5-digit ZIP or ZIP+4.");
@@ -119,6 +138,7 @@
 
     // Phone
     const phoneDigits = (v.phone || "").replace(/\D/g, "");
+
     if (phoneDigits.length !== 10) {
       valid = false;
       setError("phone", "Enter a 10-digit phone number, e.g., (555) 555-1234.");
@@ -127,13 +147,14 @@
 
     // Email
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email || "");
+
     if (!emailOk) {
       valid = false;
       setError("email", "Enter a valid email address.");
       messages.push("Email is invalid.");
     }
 
-    // Birthdate
+    // Birth date
     if (!v.birthdate) {
       valid = false;
       setError("birthdate", "Birth date is required.");
@@ -162,21 +183,23 @@
       errorSummary.hidden = false;
       errorSummary.innerHTML =
         "<strong>Please fix the following:</strong><ul>" +
-        messages.map((m) => `<li>${m}</li>`).join("") +
+        messages.map((message) => `<li>${message}</li>`).join("") +
         "</ul>";
     }
 
     return valid;
   };
 
-  const formatDate = (iso) => {
-    if (!iso) return "";
-    const [y, m, d] = iso.split("-");
-    return `${m}/${d}/${y}`;
+  const formatDate = (isoDate) => {
+    if (!isoDate) return "";
+
+    const [year, month, day] = isoDate.split("-");
+    return `${month}/${day}/${year}`;
   };
 
   const showConfirm = () => {
     const v = gatherValues();
+
     const rows = [
       ["First name", v.firstName],
       ["Last name", v.lastName],
@@ -188,13 +211,14 @@
     ];
 
     confirmList.innerHTML = rows
-      .map(([dt, dd]) => {
-        const safe = (dd || "")
+      .map(([term, description]) => {
+        const safe = (description || "")
           .toString()
           .replace(/</g, "&lt;")
           .replace(/>/g, "&gt;")
           .replace(/\n/g, "<br>");
-        return `<dt>${dt}</dt><dd>${safe}</dd>`;
+
+        return `<dt>${term}</dt><dd>${safe}</dd>`;
       })
       .join("");
 
@@ -209,8 +233,28 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  form.addEventListener("reset", () => {
+    [
+      "firstName",
+      "lastName",
+      "address",
+      "city",
+      "state",
+      "zip",
+      "phone",
+      "email",
+      "birthdate",
+      "message",
+      "captcha",
+    ].forEach((name) => setError(name, ""));
+
+    errorSummary.hidden = true;
+    errorSummary.textContent = "";
+  });
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+
     if (validate()) {
       showConfirm();
     }
@@ -223,6 +267,7 @@
 
   sendBtn.addEventListener("click", (e) => {
     e.preventDefault();
+
     const v = gatherValues();
 
     const lines = [
@@ -238,9 +283,9 @@
     const subject = encodeURIComponent(
       `New Contact – ${v.firstName} ${v.lastName}`.trim(),
     );
-
     const body = encodeURIComponent(lines.join("\n"));
     const mailto = `mailto:daniel@kuehn.foo?subject=${subject}&body=${body}`;
+
     window.location.href = mailto;
   });
 })();
